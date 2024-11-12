@@ -1,0 +1,16 @@
+
+{% extends 'base.html'%}
+{% block title%} CustomerId Form{% endblock%}
+{% block body %}
+<h2>Submit Customer ID</h2>
+<form method="post" enctype="multipart/form-data" action = '{% url 'customerID' %}'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+
+{% endblock %}
+
+
+

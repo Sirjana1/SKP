@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> {% block title%}{% endblock%} || App1</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<h3>Welcome{{request.user.username}}</h3>
+
+
+{% if user.is_authenticated %}
+<h3>Welcome {{user.username}}</h3>
+{% else %}
+<h3>Welcome Guest! <h3>
+{%endif%}
+  <p>Hello, This is body</p>
+
+  <a href="login_view/">login Form</a>
+  <a href="signup/">Signup Form</a>
+  <a href="logout/">Logout Form</a>
+  <a href="Home/">Home </a>
+  <a href="contact_form/">Contact</a>
+  <a href = "feedback_view/">Feedback_form</a>
+  <a href = "cu/"> Customer_ID request</a>
+  <a href="item_list/">Item List</a>
+  <a href="sell_item/">Sell</a>
+  <a href="add_item/">Add</a>
+  <a href="inventory_view/"> Item List</a>
+  <a href = "members_view/"> Members</a>
+  <a href = "MembersForm_view/">Members Form</a>
+  <a href = "blog_post_detail/">Blog Post</a>
+
+<div>
+  <a href="{% url 'login_view' %}" class="btn btn-dark">Logout</a>
+</div>
+{% block  body %}
+
+{% endblock  %}
+</body>
+</html> 

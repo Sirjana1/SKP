@@ -1,0 +1,26 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Last Added Date</th>
+    </tr>
+    {% comment %} {% for item in items %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.total_quantity }}</td>
+        <td>{{ item.total_price }}</td>
+        <td>{{ item.last_added_date }}</td>
+    </tr>
+    {% endfor %} {% endcomment %}
+
+    {% for items in items1 %}
+    {{items.name}}
+    {{items.total_price}}
+
+    {% endfor%}
+    {% for itemss in items2 %}
+    {{itemss.name}}
+    {{itemss.email}}
+    {% endfor %}
+</table>

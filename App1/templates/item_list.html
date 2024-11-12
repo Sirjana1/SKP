@@ -1,0 +1,25 @@
+<h2>Grocery Items</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>ID</th>
+        <th>Total Price</th> <!-- New column for Total Price -->
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.item_id }}</td>
+        <td>{{ item.total_price|floatformat:2|default_if_none:"0" }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+<a href="{% url 'add_grocery_item' %}">Add Grocery Item</a>
+<a href="{% url 'sell_grocery_item' %}">Sell Grocery Item</a>
